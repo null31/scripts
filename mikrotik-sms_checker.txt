@@ -1,0 +1,12 @@
+# This script requires "Receive Enabled" option checked.
+# Like this: /tool sms set receive-enabled=yes port=lte1
+
+:local msgcount [/tool sms inbox print count-only]
+
+if ($msgcount > 0) do={
+  :local token "id_bot:token"
+  :local chat "chat_id"
+  :local text "some text to your chat"
+
+  /tool fetch mode=https url="https://api.telegram.org/bot$token/sendMessage\?chat_id=$chat&text=$text" keep-result=no
+}
