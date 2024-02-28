@@ -15,7 +15,7 @@ export BKP_TYPE="${1}"
 export FILE_LIST="${2}"
 
 ## Output to a logfile
-exec > >(tee -i ${LOG})
+exec > >(tee -ai ${LOG})
 exec 2>&1
 
 echo "###### Backup started: $(date) ######"
