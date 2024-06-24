@@ -16,7 +16,7 @@ USER=user@email.com
 KEY=012abc
 RR=(_25._tcp.example.com. _443._tcp.example.com.)
 IDS=(123 456) # these IDs must match the order you wrote the records above to prevent update the wrong records and return error
-CERT_HASH=$(/opt/scripts/gen_tlsa.sh /etc/letsencrypt/live/example.com/fullchain.pem)
+CERT_HASH=$(/opt/scripts/generate_tlsa.sh /etc/letsencrypt/live/example.com/fullchain.pem)
 ZONE=012
 
 for i in "${!RR[@]}"; do
